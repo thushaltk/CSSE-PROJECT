@@ -47,6 +47,7 @@ const ViewPurchaseOrder = (props) => {
     };
     purchaseorderService.updateStatus(formData).then((res) => {
       console.log(res);
+      props.trigger(true);
       handleClose();
     });
   };
@@ -58,6 +59,7 @@ const ViewPurchaseOrder = (props) => {
     };
     purchaseorderService.updateStatus(formData).then((res) => {
       console.log(res);
+      props.trigger(true);
       handleClose();
     });
   };

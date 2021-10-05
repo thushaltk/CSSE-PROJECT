@@ -18,7 +18,7 @@ import assignSuppliersService from "../../services/assignSuppliers-service";
 const Item = (props) => {
   const [it, setItem] = useState(props.item);
   const [qty, setQty] = useState(1);
-  const [dateValue, setDateValue] = useState("");
+  const [dateValue, setDateValue] = useState(null);
   const [selectedSuppliers, setSelectedSuppliers] = useState([]);
   const [allSuppliers, setAllSuppliers] = useState([]);
   const [enteredBudget, setEnteredBudget] = useState([]);

@@ -32,8 +32,10 @@ const ProcumentStaffOrders = () => {
   const [enteredSearchKeyword, setEnteredSearchKeyword] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedLocation, setSelectedLocation] = useState("");
+  const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
+    setTrigger(false);
     purchaseorderService.getAllPurchaseOrder().then((res) => {
       if (res.data) {
         setPurchaseOrders(res.data.data);
@@ -41,7 +43,7 @@ const ProcumentStaffOrders = () => {
         setNoData(true);
       }
     });
-  }, []);
+  }, [trigger]);
 
   const handleChange = (event) => {
     setSelectedSitename(event.target.value);
@@ -264,6 +266,7 @@ const ProcumentStaffOrders = () => {
             close={setToClose}
             data={singleOrder}
             orderID={singleOrder._id}
+            trigger={(sts) => setTrigger(sts)}
           />
         ) : (
           ""
